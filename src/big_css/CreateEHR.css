@@ -1,0 +1,12 @@
+/* src/CSS/CreateEhr.css */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Add waves pattern to the background */
+body {
+ background: linear-gradient(to bottom, #000000 20%, #223f46 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
