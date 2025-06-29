@@ -4,7 +4,10 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import NavBar_Logout from "./NavBar_Logout";
 import DoctorRegistration from "../build/contracts/DoctorRegistration.json";
 import DoctorPatientList from "./DoctorPatientList";
+<<<<<<< HEAD
 import CreateRecord from "./CreateRecord";
+=======
+>>>>>>> 3cf79c2301a79171c87b11c7f127cbc09bae465f
 
 const DoctorDashBoardPage = () => {
   const { hhNumber } = useParams();
@@ -13,7 +16,10 @@ const DoctorDashBoardPage = () => {
   const [doctorDetails, setDoctorDetails] = useState(null);
   const [error, setError] = useState(null);
   const [showPatientList, setShowPatientList] = useState(false);
+<<<<<<< HEAD
   const [showCreateRecord, setShowCreateRecord] = useState(false);
+=======
+>>>>>>> 3cf79c2301a79171c87b11c7f127cbc09bae465f
 
   const viewPatientList = () => {
     navigate("/doctor/"+hhNumber+"/patientlist");
@@ -23,10 +29,13 @@ const DoctorDashBoardPage = () => {
     navigate("/doctor/"+hhNumber+"/viewdoctorprofile");
   };
 
+<<<<<<< HEAD
   const viewAllPatients = () => {
     navigate("/doctor/"+hhNumber+"/allpatients");
   };
 
+=======
+>>>>>>> 3cf79c2301a79171c87b11c7f127cbc09bae465f
   useEffect(() => {
     const init = async () => {
       // Check if Web3 is injected by MetaMask or any other provider
@@ -60,6 +69,7 @@ const DoctorDashBoardPage = () => {
   return (
     <div>
     <NavBar_Logout></NavBar_Logout>
+<<<<<<< HEAD
     <div className="bg-gradient-to-b from-black to-gray-800 p-4 sm:p-10 font-mono text-white min-h-screen">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-center">Doctor Dashboard</h2>
@@ -72,10 +82,17 @@ const DoctorDashBoardPage = () => {
         
         {doctorDetails && (
           <p className="text-xl sm:text-2xl mb-8 text-center">
+=======
+    <div className="bg-gradient-to-b from-black to-gray-800 p-4 sm:p-10 font-mono text-white h-screen flex flex-col justify-center items-center">
+      <h2 className="text-3xl sm:text-4xl font-bold mb-6">Doctor Dashboard</h2>
+        {doctorDetails && (
+          <p className="text-xl sm:text-2xl mb-24">
+>>>>>>> 3cf79c2301a79171c87b11c7f127cbc09bae465f
             Welcome{" "}
             <span className="font-bold text-yellow-500">{doctorDetails[1]}!</span>
           </p>
         )}
+<<<<<<< HEAD
 
         {/* Main Dashboard Actions */}
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
@@ -174,6 +191,25 @@ const DoctorDashBoardPage = () => {
           </div>
         </div>
       </div>
+=======
+      <div className="space-y-4 space-x-4">
+        <button
+          onClick={viewDoctorProfile}
+          className="px-6 py-3 bg-teal-500 hover-bg-gray-600 text-white rounded-lg focus:outline-none focus:ring focus:ring-teal-400 transition duration-300"
+        >
+          View Profile
+        </button>
+        
+        <button
+        onClick={() => setShowPatientList(true)}
+        className="px-6 py-3 bg-teal-500 hover-bg-gray-600 text-white rounded-lg focus:outline-none focus:ring focus:ring-teal-400 transition duration-300"
+      >
+        View Patient List
+        </button>
+      
+      </div>
+      {showPatientList && <DoctorPatientList />}
+>>>>>>> 3cf79c2301a79171c87b11c7f127cbc09bae465f
       </div>
       </div>
   );

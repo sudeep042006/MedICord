@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import NavBar_Logout from "./NavBar_Logout";
@@ -11,11 +12,17 @@ const ipfs = ipfsHttpClient({
 });
 
 const UPLOAD_EHR_ADDRESS = "0x1Be867Af56cbb4c9Ae1B0e6c4b6e8B0fd7b321eD";
+=======
+import React, { useState } from "react";
+import { useParams } from "react-router-dom";
+import NavBar_Logout from "./NavBar_Logout";
+>>>>>>> 3cf79c2301a79171c87b11c7f127cbc09bae465f
 
 const PatientRecords = () => {
   const { hhNumber } = useParams();
   const [records, setRecords] = useState([]);
   const [showModal, setShowModal] = useState(false);
+<<<<<<< HEAD
   const [newRecord, setNewRecord] = useState({ title: "", description: "", file: null });
   const [patientDetails, setPatientDetails] = useState(null);
   const [web3, setWeb3] = useState(null);
@@ -103,6 +110,19 @@ const PatientRecords = () => {
       setError("Failed to upload file or save record");
     }
     setUploading(false);
+=======
+  const [newRecord, setNewRecord] = useState({ title: "", description: "" });
+
+  const handleAddRecord = () => {
+    setShowModal(true);
+    setNewRecord({ title: "", description: "" });
+  };
+
+  const handleSaveRecord = () => {
+    if (!newRecord.title || !newRecord.description) return;
+    setRecords([{ ...newRecord, id: Date.now() }, ...records]);
+    setShowModal(false);
+>>>>>>> 3cf79c2301a79171c87b11c7f127cbc09bae465f
   };
 
   const handleDelete = (id) => {
@@ -127,6 +147,7 @@ const PatientRecords = () => {
             <div className="text-gray-300">No records yet.</div>
           ) : (
             <div className="space-y-4">
+<<<<<<< HEAD
               {records.map((rec, idx) => (
                 <div
                   key={idx}
@@ -158,6 +179,23 @@ const PatientRecords = () => {
                       Delete
                     </button>
                   </div>
+=======
+              {records.map((rec) => (
+                <div
+                  key={rec.id}
+                  className="bg-gray-900 rounded shadow p-4 flex justify-between items-center"
+                >
+                  <div>
+                    <div className="font-bold">{rec.title}</div>
+                    <div className="text-gray-300">{rec.description}</div>
+                  </div>
+                  <button
+                    className="ml-4 px-3 py-1 bg-red-500 rounded hover:bg-red-700"
+                    onClick={() => handleDelete(rec.id)}
+                  >
+                    Delete
+                  </button>
+>>>>>>> 3cf79c2301a79171c87b11c7f127cbc09bae465f
                 </div>
               ))}
             </div>
@@ -166,6 +204,7 @@ const PatientRecords = () => {
         {/* Modal for adding record */}
         {showModal && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+<<<<<<< HEAD
             <div className="bg-white text-black rounded-lg p-6 w-96">
               <h3 className="text-lg font-bold mb-4">Add New Record</h3>
               {patientDetails && (
@@ -178,6 +217,10 @@ const PatientRecords = () => {
                   <div><b>Email:</b> {patientDetails.email}</div>
                 </div>
               )}
+=======
+            <div className="bg-white text-black rounded-lg p-6 w-80">
+              <h3 className="text-lg font-bold mb-4">Add New Record</h3>
+>>>>>>> 3cf79c2301a79171c87b11c7f127cbc09bae465f
               <input
                 className="w-full mb-3 p-2 border rounded"
                 placeholder="Title"
@@ -194,26 +237,37 @@ const PatientRecords = () => {
                   setNewRecord({ ...newRecord, description: e.target.value })
                 }
               />
+<<<<<<< HEAD
               <input
                 type="file"
                 className="w-full mb-3 p-2 border rounded"
                 onChange={handleFileChange}
               />
               {error && <div className="text-red-500 mb-2">{error}</div>}
+=======
+>>>>>>> 3cf79c2301a79171c87b11c7f127cbc09bae465f
               <div className="flex justify-end space-x-2">
                 <button
                   className="px-4 py-1 bg-gray-300 rounded"
                   onClick={() => setShowModal(false)}
+<<<<<<< HEAD
                   disabled={uploading}
+=======
+>>>>>>> 3cf79c2301a79171c87b11c7f127cbc09bae465f
                 >
                   Cancel
                 </button>
                 <button
                   className="px-4 py-1 bg-teal-500 text-white rounded"
                   onClick={handleSaveRecord}
+<<<<<<< HEAD
                   disabled={uploading}
                 >
                   {uploading ? "Saving..." : "Save"}
+=======
+                >
+                  Save
+>>>>>>> 3cf79c2301a79171c87b11c7f127cbc09bae465f
                 </button>
               </div>
             </div>

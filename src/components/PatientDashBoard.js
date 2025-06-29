@@ -17,10 +17,13 @@ const PatientDashBoard = () => {
   const viewprofile = () => {
     navigate("/patient/" + hhNumber + "/viewprofile");
   };
+<<<<<<< HEAD
 
   const managePermissions = () => {
     navigate("/patient/" + hhNumber + "/grantpermission");
   };
+=======
+>>>>>>> 3cf79c2301a79171c87b11c7f127cbc09bae465f
   
 
   const [web3, setWeb3] = useState(null);
@@ -62,6 +65,7 @@ const PatientDashBoard = () => {
   return (
     <div>
       <NavBar_Logout />
+<<<<<<< HEAD
       <div className="bg-gradient-to-b from-black to-gray-800 p-4 sm:p-10 font-mono text-white min-h-screen">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-center">Patient Dashboard</h2>
@@ -135,6 +139,30 @@ const PatientDashBoard = () => {
               Control which doctors can view your medical records. You can grant or revoke access to any registered doctor.
             </p>
           </div>
+=======
+      <div className="bg-gradient-to-b from-black to-gray-800 p-4 sm:p-10 font-mono text-white h-screen flex flex-col justify-center items-center">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-6">Patient Dashboard</h2>
+        {patientDetails && (
+          <p className="text-xl sm:text-2xl mb-24">
+            Welcome{" "}
+            <span className="font-bold text-yellow-500">{patientDetails.name}!</span>
+          </p>
+        )}
+        <div className="flex flex-wrap justify-center gap-5 w-full px-4 sm:px-0">
+          <button
+            onClick={viewprofile}
+            className="my-2 px-4 sm:px-8 py-4 sm:py-5 w-full sm:w-1/4 rounded-lg bg-teal-500 hover:bg-gray-600 transition-colors duration-300"
+          >
+            View Profile
+          </button>
+          <button
+            onClick={viewRecord}
+            className="my-2 px-4 sm:px-8 py-4 sm:py-5 w-full sm:w-1/4 rounded-lg bg-teal-500 hover:bg-gray-600 transition-colors duration-300"
+          >
+            View Record
+          </button>
+
+>>>>>>> 3cf79c2301a79171c87b11c7f127cbc09bae465f
         </div>
       </div>
     </div>

@@ -27,7 +27,18 @@ const RegisterPage = () => {
         >
           Patient Registration
         </button>
+<<<<<<< HEAD
 
+=======
+        <button
+          className="bg-teal-500 text-white font-bold py-2 px-4 rounded w-full transition duration-300 ease-in-out transform hover:scale-110 hover:bg-gray-600" // Added transform and grey color for hover
+          onClick={() => {
+            navigate("/diagnostic_registration");
+          }}
+        >
+          Diagnostics Registration
+        </button>
+>>>>>>> 3cf79c2301a79171c87b11c7f127cbc09bae465f
       </div>
       </div>
       </div>

@@ -22,10 +22,13 @@ import ViewProfile from "./components/ViewProfile";
 import ViewDoctorProfile from "./components/ViewDoctorProfile";
 import ViewDiagnosticProfile from "./components/ViewDiagnosticProfile";
 import AboutUs from "./components/AboutPage"; 
+<<<<<<< HEAD
 import PatientRecords from "./components/PatientRecords";
 import CreateRecord from "./components/CreateRecord";
 import GrantPermission from "./components/GrantPermission";
 import ViewAllPatients from "./components/ViewAllPatients";
+=======
+>>>>>>> 3cf79c2301a79171c87b11c7f127cbc09bae465f
 
 
 
@@ -107,7 +110,11 @@ const BrowseRouter = () => {
         ></Route>
         <Route
           path="/patient/:hhNumber/viewrecords"
+<<<<<<< HEAD
           element={<PatientRecords />}
+=======
+          element={<ViewPatientRecords />}
+>>>>>>> 3cf79c2301a79171c87b11c7f127cbc09bae465f
         ></Route>
         
         <Route 
@@ -120,6 +127,7 @@ const BrowseRouter = () => {
           path="/doctor/:hhNumber/patientlist"
           element={<ViewPatientList />}
         ></Route>
+<<<<<<< HEAD
         
         <Route
           path="/doctor/:hhNumber/createrecord"
@@ -135,6 +143,8 @@ const BrowseRouter = () => {
           path="/patient/:hhNumber/grantpermission"
           element={<GrantPermission />}
         ></Route>
+=======
+>>>>>>> 3cf79c2301a79171c87b11c7f127cbc09bae465f
        
        
       </Routes>
